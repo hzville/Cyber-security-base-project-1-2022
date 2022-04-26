@@ -14,7 +14,7 @@ def select_username(username):
     return cur.fetchall()
 
 def create_new_account(username, password):
-    cur.execute(f"INSERT INTO {table} (username, password, balance, admin) VALUES ('" + {username} + "', '" + {password} + "', 0, False)")
+    cur.execute(f'INSERT INTO {table} (username, password, balance, admin) VALUES ("{username}", "{password}", 0, False)')
     conn.commit()
 
 def change_password(username, password):
