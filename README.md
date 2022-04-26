@@ -1,6 +1,6 @@
 ## University of Helsinki Cyber Security Base 2022, project 1.
 
-This repository contains an insecure web application for the Cyber Security Base course. The application contains multiple security vulnerabilities, and the code should not be used in any real-world application. The task is to point out some of the vulnerabilities in the application and describe how they can be fixed.
+:warning: This repository contains an insecure web application for the Cyber Security Base course. The application contains multiple security vulnerabilities, and the code should not be used in any real-world application. The task is to point out some of the vulnerabilities in the application and describe how they can be fixed. :warning:
 
 ---
 
@@ -50,26 +50,27 @@ On Windows run:
 virtual-env\Scripts\activate.bat
 ```
 
-5. Install the dependencies from the requirements.txt file 
+5. Move inside cloned project and install the dependencies from the requirements.txt file 
 
 ``` 
+cd Cyber-security-base-project-1-2022/
 
 pip install -r requirements.txt 
 
 ``` 
 
-6. Initialize the mock database with command 
+6. Move inside src/ and initialize the mock database with command 
 
 ``` 
+cd src/
 
 python3 create_mock_db.py 
 
 ``` 
 
-7. Move to the src/ folder and run the application with command 
+7. Run the application with command 
 
 ``` 
-cd src/
 
 flask run 
 
