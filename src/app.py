@@ -1,3 +1,4 @@
+from crypt import methods
 from flask import Flask
 from flask import render_template, redirect, request, flash, session
 import db_queries
@@ -56,3 +57,18 @@ def create_new_account():
 def view_account(username):
     account_data = db_queries.select_username(username)
     return render_template('view_account.html', account_data=account_data)
+
+@app.route('/change-password', methods=["POST"])
+def change_password():
+    username = session['username']
+    password1 = request.form['password1']
+    password2 = request.form['password2']
+
+    if password1 != password2:
+        flash('Passwords did not match')
+        return redirect('/')
+
+    db_queries.change_password(username, password1)
+    flash('Password changed!')
+    return redirect('/')
+    

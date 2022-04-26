@@ -9,6 +9,14 @@
                         <input type="submit" value="logout">
                     </form>
                     <button onClick=window.location.href="/view-account/{{session.username}}">View account</button>
+                    <form action="/change-password" method="POST">
+                        <p>Change password:</p>
+                        New password: <input type="text" name="password1">
+                        <br>
+                        New password again: <input type="text" name="password2">
+                        <br>
+                        <input type="submit" name="Change password">
+                    </form>
                 </div>
             {% else %}
                 <div>
