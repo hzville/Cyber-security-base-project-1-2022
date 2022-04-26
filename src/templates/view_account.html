@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <meta charset="UTF-8">
+        <title>Account data</title>
+        <body>
+            <div>
+            <h1>Your account data</h1>
+            <br>
+            {% if session.username %}
+
+                <p>Session username is:{{session.username}}</p>
+
+            {% endif %}
+
+            {% for result in account_data %}
+                <p> Account id: {{result[0]}}</p>
+                <p> Account name: {{result[1]}}</p>
+                <p> Account balance: {{result[3]}}</p>
+            {% endfor %}
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }} </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </body>
+    </html>

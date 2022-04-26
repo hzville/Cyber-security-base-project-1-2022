@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <meta charset="UTF-8">
+        <title>Interconnected SuperBank Services</title>
+        <body>
+            {% if session.username %}
+                <div>Welcome 
+                    <form action="/logout">
+                        <input type="submit" value="logout">
+                    </form>
+                    <button onClick=window.location.href="/view-account/{{session.username}}">View account</button>
+                </div>
+            {% else %}
+                <div>
+                <h1>Welcome to Interconnected SuperBank Services</h1>
+                <form action="/login-page">
+                    <input type="submit" value="Login">
+                </form>
+                <form action="/create-account-page">
+                    <input type="submit" value="Create account">
+                </form>
+                </div>
+            {% endif %}
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }} </p>
+                    {% endfor %}
+                {% endif %}
+             {% endwith %}
+        </body>
+    </html>

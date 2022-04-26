@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <body>
+            <div>
+            <h1>Login</h1>
+            <form action="/execute-login" method="POST">
+                <input type="text" name="username" placeholder="username">
+                <br>
+                <input type="text" name="password" placeholder="password">
+                <br>
+                <input type="submit" value="Login">
+            </form>
+            <form action="/">
+                <input type="submit" value="Main menu">
+            </form>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p>{{ message }} </p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </body>
+    </html>
