@@ -142,7 +142,7 @@ When creating passwords for new accounts, there should be a check for weak passw
 
 ### Location of flaw: 
 
-https://github.com/hzville/Cyber-security-base-project-1-2022/blob/master/src/app.py#L17
+https://github.com/hzville/Cyber-security-base-project-1-2022/blob/master/src/app.py#L61
 
 ### Description of flaw: 
 
