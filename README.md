@@ -151,12 +151,4 @@ The application is missing protection against cross site request forgery. This l
 
 How to fix the flaw: 
 
-A random CSRF token should be assigned to to user when he logs in to the website. Additionally, when making any requests from the frontend to the backend, like with the form for changing users password, should there be a check that the requests contain the same CSRF token as the users CSRF token. If the CSRF token is missing or not included in the request, should it be rejected. 
-
- 
- 
-
- 
- 
-
- 
+A random CSRF token should be assigned to to user when he logs in to the website. Additionally, when making any requests from the frontend to the backend, like with the form for changing users password, should there be a check that the requests contain the same CSRF token as the users CSRF token. If the CSRF token is missing or not included in the request, should it be rejected.
